@@ -6,3 +6,6 @@ exports.spotify = {
   secret: process.env.SPOTIFY_SECRET
 };
 ```
+
+// omdb api key
+http://www.omdbapi.com/?i=tt3896198&apikey=a9b1a481
