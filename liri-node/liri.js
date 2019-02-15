@@ -11,5 +11,4 @@ var spotify = new Spotify(keys.spotify);
 ```
 
 
-`spotify-this-song`
-
+node liri.js potify-this-song <artist/band name here>`
