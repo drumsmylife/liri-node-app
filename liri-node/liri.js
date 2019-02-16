@@ -84,10 +84,12 @@ function spotifyThisSong(uQuery) {
         if (error) {
             return console.log('Error occurred: ' + error);
         }
+        var spotDataArr = data.tracks.items;
+        for (i = 0; i < spotDataArr.length; i++) {
         console.log("Artist Name: " + data.tracks.items[0].album.artists[0].name);
         console.log("Song Name: " + data.tracks.items[0].name);
         console.log("Album Name: " + data.tracks.items[0].album.name);
         console.log("Link for Song: " + data.tracks.items[0].external_urls.spotify + "\n");
-
+        };
     });
 }
