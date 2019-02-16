@@ -75,8 +75,19 @@ function spotifyThisSong(uQuery) {
         uQuery = "The Sign by Ace of Base"
         console.log("The Sign by Ace of Base");
     };
-    
+    // search query
+    spotify.search({
+        type: 'track',
+        query: uQuery,
+        limit: 1
+    }, function (error, data) {
+        if (error) {
+            return console.log('Error occurred: ' + error);
+        }
+        console.log("Artist Name: " + data.tracks.items[0].album.artists[0].name);
+        console.log("Song Name: " + data.tracks.items[0].name);
+        console.log("Album Name: " + data.tracks.items[0].album.name);
+        console.log("Link for Song: " + data.tracks.items[0].external_urls.spotify + "\n");
 
-
-    
+    });
 }
