@@ -14,8 +14,12 @@ var fs = require("fs");
 var axios = require("axios");
 
 //start spotify
+var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
 
+//user input
+var userInput = process.argv[2];
+var response = process.argv[3];
 
 
 
