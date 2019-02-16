@@ -19,7 +19,25 @@ var spotify = new Spotify(keys.spotify);
 
 //user input
 var userInput = process.argv[2];
-var response = process.argv[3];
+var uResponse = process.argv[3];
 
-
-
+// userInput/response function
+function userIn(userInput, uResponse){
+    switch (userInput) {
+        case "concert-this":
+            concertThis();
+            break;
+        case "spotify-this-song":
+            spotifyThisSong();
+            break;
+        case "movie-this":
+            movieThis();
+            break;
+        case "do-what-it-says":
+            doThis(uResponse);
+            break;
+            default:
+            console.log("better choices please");
+    }
+}
+userIn(userInput, uResponse);
