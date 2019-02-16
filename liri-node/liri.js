@@ -68,3 +68,15 @@ function concertThis(uQuery) {
     });
 };
 //concert this DONE!
+
+//spotify-this-song function
+function spotifyThisSong(uQuery) {
+    if (!uQuery) {
+        uQuery = "The Sign by Ace of Base"
+        console.log("The Sign by Ace of Base");
+    };
+    
+
+
+    
+}
