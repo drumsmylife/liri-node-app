@@ -54,9 +54,9 @@ function concertThis(uQuery) {
             console.log(response.data.length);
             var userBand = response.data;
             if (userBand.length > 0) {
-
-                for (i = 0; i < 1; i++) {
+                    for (i = 0; i < 1; i++) {
                     console.log('Location: ' + response.data[i].venue.city);
+                    console.log('Name: ' + response.data[i].venue.name);
 
                     var concertDate = moment(response.data[i].datetime).format("MM/DD/YYYY hh:00 A");
                     console.log('ConcertDate: ' + concertDate + '\n' );
