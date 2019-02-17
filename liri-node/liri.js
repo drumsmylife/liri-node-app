@@ -22,7 +22,7 @@ var userInput = process.argv[2];
 var uQuery = process.argv[3];
 
 // userInput/uQuery function. userInput uses specific commands to get the response they need.
-//uQuerym is the users search parameters which is more flexible.
+//uQuery is the users search parameters which is more flexible.
 function userIn(userInput, uQuery){
     switch (userInput) {
         case "concert-this":
@@ -32,7 +32,7 @@ function userIn(userInput, uQuery){
             spotifyThisSong();
             break;
         case "movie-this":
-            movieThis();
+            movieThis(uQuery);
             break;
         case "do-what-it-says":
             doThis(uQuery);
@@ -70,7 +70,7 @@ function concertThis(uQuery) {
 //concert this DONE!
 
 //spotify-this-song function
-function spotifyThisSong(uQuery) {
+function spotifyThisSong() {
     if (!uQuery) {
         uQuery = "The Sign by Ace of Base"
         console.log("The Sign by Ace of Base");
@@ -97,16 +97,12 @@ function spotifyThisSong(uQuery) {
 
 // movie-this function
 function movieThis(uQuery) {
-    axios.get( "http://www.omdbapi.com/?i=tt3896198" + uQuery + "&apikey=a9b1a481")
+    axios.get( "http://www.omdbapi.com/?t=" + uQuery + "&apikey=trilogy")
     .then(function(response){
         if (!uQuery) {
             return console.log ("mr nobody");
-        };
-            console.log(response.data.length);
-            var ratingsArr = response.data;
-            if (ratingsArr.length > 2) {
-                for (i = 0; i < 1; i++) {
-                
+        } else if(uQuery){
+      
             console.log("Movie Title: " + response.data.Title);
             console.log("Release Year: " + response.data.Year);
             console.log("IMDB Rating: " + response.data.imdbRating);
@@ -115,10 +111,31 @@ function movieThis(uQuery) {
             console.log("Language: " + response.data.Language);
             console.log("Plot: " + response.data.Plot);
             console.log("Actors: " + response.data.Actors + "\n");
-                };
-        }
-    })
-};
+                
+        
+    }
+}
+    )};
+
+
+
+//do-what-it-says function
+// function doThis(uQuery) {
+//     // UTILIZE THE BUILT IN READFILE METHOD TO ACCESS RANDOM.TXT
+//     fs.readFile("random.txt", "utf8", function (error, data) {
+//         if (error) {
+//             return console.log(error);
+//         }
+//         // CATCH DATA AND USE THE .SPLIT() METHOD TO SEPARATE OBJECTS WITHIN OUR NEW ARRAY
+//         var dataArr = data.split(",");
+
+//         // TAKE OBJECTS FROM RANDOM.TXT TO PASS AS PARAMETERS
+//         userInput = dataArr[0];
+//         uQuery = dataArr[1];
+//         // CALL OUR FUNCTION WITH OUR NEW PARAMETERS...
+//         userIn(userInput, uQuery);
+//     });
+// };
 
 
     
