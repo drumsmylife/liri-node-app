@@ -39,6 +39,7 @@ function userIn(userInput, uQuery){
             break;
             default:
             console.log("better choices please");
+            break;
     }
 }
 console.log(uQuery);
@@ -55,7 +56,6 @@ function concertThis(uQuery) {
             if (userBand.length > 0) {
 
                 for (i = 0; i < 1; i++) {
-                    console.log(userBand[i].venue.name);
                     console.log('Location: ' + response.data[i].venue.city);
 
                     var concertDate = moment(response.data[i].datetime).format("MM/DD/YYYY hh:00 A");
@@ -120,22 +120,23 @@ function movieThis(uQuery) {
 
 
 //do-what-it-says function
-// function doThis(uQuery) {
-//     // UTILIZE THE BUILT IN READFILE METHOD TO ACCESS RANDOM.TXT
-//     fs.readFile("random.txt", "utf8", function (error, data) {
-//         if (error) {
-//             return console.log(error);
-//         }
-//         // CATCH DATA AND USE THE .SPLIT() METHOD TO SEPARATE OBJECTS WITHIN OUR NEW ARRAY
-//         var dataArr = data.split(",");
+function doThis() {
+    // UTILIZE THE BUILT IN READFILE METHOD TO ACCESS RANDOM.TXT
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        if (error) {
+            return console.log(error);
+        }
+        // CATCH DATA AND USE THE .SPLIT() METHOD TO SEPARATE OBJECTS WITHIN OUR NEW ARRAY
+        var dataArr = data.split(",");
 
-//         // TAKE OBJECTS FROM RANDOM.TXT TO PASS AS PARAMETERS
-//         userInput = dataArr[0];
-//         uQuery = dataArr[1];
-//         // CALL OUR FUNCTION WITH OUR NEW PARAMETERS...
-//         userIn(userInput, uQuery);
-//     });
-// };
+        // TAKE OBJECTS FROM RANDOM.TXT TO PASS AS PARAMETERS
+        userInput = dataArr[0];
+        uQuery = dataArr[1];
+        // CALL OUR FUNCTION WITH OUR NEW PARAMETERS...
+        userIn(userInput, uQuery);
+    })
+};
+//do-what-it-says function DONE!!!!
 
 
     
