@@ -62,10 +62,10 @@ function concertThis(uQuery) {
                     console.log('ConcertDate: ' + concertDate + '\n' );
                     
 
-                };
-            };
+                }
+            }
         }
-    });
+    })
 };
 //concert this DONE!
 
@@ -90,9 +90,9 @@ function spotifyThisSong() {
         console.log("Song Name: " + data.tracks.items[0].name);
         console.log("Album Name: " + data.tracks.items[0].album.name);
         console.log("Link for Song: " + data.tracks.items[0].external_urls.spotify + "\n");
-        };
-    });
-}
+        }
+    })
+};
 //spotiify-this DONE
 
 // movie-this function
