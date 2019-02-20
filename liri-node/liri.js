@@ -42,7 +42,6 @@ function userIn(userInput, uQuery){
             break;
     }
 }
-console.log(uQuery);
 userIn(userInput, uQuery);
 
 // concert-this function
@@ -124,7 +123,7 @@ function doThis() {
     // UTILIZE THE BUILT IN READFILE METHOD TO ACCESS RANDOM.TXT
     fs.readFile("random.txt", "utf8", function (error, data) {
         if (error) {
-            return console.log(error);
+            return error;
         }
         // CATCH DATA AND USE THE .SPLIT() METHOD TO SEPARATE OBJECTS WITHIN OUR NEW ARRAY
         var dataArr = data.split(",");
