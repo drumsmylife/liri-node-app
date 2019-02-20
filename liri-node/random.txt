@@ -1,1 +1,1 @@
-concert-this,"shinedown"
+concert-this,shinedown
